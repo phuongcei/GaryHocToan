@@ -66,19 +66,28 @@ const App = {
     /**
      * Start a new game
      */
-    startGame(range, questionCount) {
-        const questionData = gameEngine.startGame(range, questionCount);
-        Screens.renderGame(this.container, questionData);
+    startGame(range, questionCount, mode = 'drag-split') {
+        this.currentMode = mode;
+        const questionData = gameEngine.startGame(range, questionCount, mode);
+
+        // Render appropriate screen based on mode
+        if (mode === 'drag-split') {
+            Screens.renderGame(this.container, questionData);
+        } else if (mode === 'tree' || mode === 'missing') {
+            Screens.renderTreeGame(this.container, gameEngine.getCurrentQuestionData(), mode);
+        } else if (mode === 'dice') {
+            Screens.renderDiceGame(this.container, gameEngine.getCurrentQuestionData());
+        }
     },
 
     /**
-     * Check current answer
+     * Check current answer (mode-aware)
      */
-    checkAnswer() {
-        const result = gameEngine.checkAnswer();
+    checkAnswer(userInput = null) {
+        const mode = this.currentMode || gameEngine.state.mode;
+        const result = gameEngine.checkAnswer(userInput);
 
         if (!result.valid) {
-            // Show hint - need to place all objects
             Screens.showWrongFeedback(this.container);
             audioManager.playWrong();
             return;
@@ -88,13 +97,18 @@ const App = {
             audioManager.playCorrect();
             Screens.showCorrectFeedback(this.container);
 
-            // Wait then move to next question
             setTimeout(() => {
                 const nextQuestion = gameEngine.nextQuestion();
                 if (nextQuestion) {
-                    Screens.renderGame(this.container, nextQuestion);
+                    // Render appropriate screen based on mode
+                    if (mode === 'drag-split') {
+                        Screens.renderGame(this.container, nextQuestion);
+                    } else if (mode === 'tree' || mode === 'missing') {
+                        Screens.renderTreeGame(this.container, gameEngine.getCurrentQuestionData(), mode);
+                    } else if (mode === 'dice') {
+                        Screens.renderDiceGame(this.container, gameEngine.getCurrentQuestionData());
+                    }
                 } else {
-                    // Game complete
                     audioManager.playCelebration();
                     const results = gameEngine.getResults();
                     Screens.renderResult(this.container, results);

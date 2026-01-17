@@ -303,3 +303,65 @@
 .fly-star {
     animation: fly-star 1s ease-out forwards;
 }
+
+/* ========================================
+   Wrong Answer Overlay
+   ======================================== */
+@keyframes wrong-flash {
+    0% {
+        opacity: 0;
+        transform: scale(0.5);
+    }
+
+    20% {
+        opacity: 1;
+        transform: scale(1.1);
+    }
+
+    80% {
+        opacity: 1;
+        transform: scale(1);
+    }
+
+    100% {
+        opacity: 0;
+        transform: scale(0.8);
+    }
+}
+
+.wrong-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(255, 80, 80, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 2000;
+    animation: wrong-flash 1.5s ease-out forwards;
+    pointer-events: none;
+}
+
+.wrong-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.wrong-emoji {
+    font-size: 6rem;
+    animation: shake 0.5s ease infinite;
+}
+
+.wrong-text {
+    font-size: 2rem;
+    font-weight: 900;
+    color: white;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+    background: rgba(255, 60, 60, 0.9);
+    padding: 0.5rem 1.5rem;
+    border-radius: 1rem;
+}

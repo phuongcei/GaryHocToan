@@ -1,0 +1,149 @@
+/* ========================================
+   Dice Styles
+   ======================================== */
+
+/* Dice Container */
+.dice-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xl);
+    padding: var(--spacing-xl);
+    background: var(--card-bg);
+    border-radius: var(--radius-xl);
+    box-shadow: var(--shadow-lg);
+}
+
+/* Mascot */
+.dice-mascot {
+    font-size: 4rem;
+    animation: float 3s ease-in-out infinite;
+}
+
+/* Dice Row */
+.dice-row {
+    display: flex;
+    gap: var(--spacing-lg);
+    align-items: center;
+}
+
+/* Single Dice */
+.dice {
+    width: 80px;
+    height: 80px;
+    background: white;
+    border: 4px solid var(--primary);
+    border-radius: var(--radius-md);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    padding: 8px;
+    gap: 2px;
+    box-shadow: var(--shadow-md);
+}
+
+.dice.red-border {
+    border-color: var(--secondary);
+}
+
+/* Dice Dot */
+.dice-dot {
+    width: 100%;
+    height: 100%;
+    border-radius: var(--radius-round);
+    background: var(--primary);
+}
+
+.dice-dot.red {
+    background: var(--secondary);
+}
+
+.dice-dot.hidden {
+    visibility: hidden;
+}
+
+/* Dice Patterns - Position mapping */
+/* Grid positions: 1-9
+   1 2 3
+   4 5 6
+   7 8 9
+*/
+
+/* Dice 1: center only */
+.dice[data-value="1"] .dice-dot:not(.pos-5) {
+    visibility: hidden;
+}
+
+/* Dice 2: diagonal */
+.dice[data-value="2"] .dice-dot:not(.pos-1):not(.pos-9) {
+    visibility: hidden;
+}
+
+/* Dice 3: diagonal + center */
+.dice[data-value="3"] .dice-dot:not(.pos-1):not(.pos-5):not(.pos-9) {
+    visibility: hidden;
+}
+
+/* Dice 4: corners */
+.dice[data-value="4"] .dice-dot:not(.pos-1):not(.pos-3):not(.pos-7):not(.pos-9) {
+    visibility: hidden;
+}
+
+/* Dice 5: corners + center */
+.dice[data-value="5"] .dice-dot:not(.pos-1):not(.pos-3):not(.pos-5):not(.pos-7):not(.pos-9) {
+    visibility: hidden;
+}
+
+/* Dice 6: two columns */
+.dice[data-value="6"] .dice-dot:not(.pos-1):not(.pos-3):not(.pos-4):not(.pos-6):not(.pos-7):not(.pos-9) {
+    visibility: hidden;
+}
+
+/* Dice Plus Sign */
+.dice-plus {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--primary-dark);
+}
+
+/* Dice Total Display */
+.dice-total {
+    font-size: 3rem;
+    font-weight: 900;
+    color: var(--secondary);
+    background: rgba(255, 255, 255, 0.9);
+    padding: var(--spacing-sm) var(--spacing-lg);
+    border-radius: var(--radius-lg);
+}
+
+/* Split Section for Dice */
+.dice-split {
+    display: flex;
+    gap: var(--spacing-xl);
+    align-items: center;
+}
+
+.dice-split-zone {
+    min-width: 100px;
+    min-height: 100px;
+    background: rgba(255, 255, 255, 0.5);
+    border: 4px dashed var(--primary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+}
+
+.dice-split-zone-label {
+    font-size: 0.875rem;
+    color: var(--primary-dark);
+}
+
+.dice-split-zone-value {
+    font-size: 2.5rem;
+    font-weight: 900;
+    color: var(--text-primary);
+}
