@@ -1,0 +1,274 @@
+/* ========================================
+   Component Styles - Buttons, Cards, etc.
+   ======================================== */
+
+/* ========================================
+   App Header
+   ======================================== */
+.app-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: var(--spacing-md);
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    margin-bottom: var(--spacing-md);
+    box-shadow: var(--shadow-md);
+}
+
+.app-title {
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+    color: var(--primary-dark);
+}
+
+.mute-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    background: var(--bg-light);
+    border-radius: var(--radius-round);
+    cursor: pointer;
+    font-size: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform var(--transition-fast);
+}
+
+.mute-btn:hover {
+    transform: scale(1.1);
+}
+
+.mute-btn:active {
+    transform: scale(0.95);
+}
+
+/* ========================================
+   Tab Navigation
+   ======================================== */
+.tab-navigation {
+    display: flex;
+    gap: var(--spacing-sm);
+    margin-bottom: var(--spacing-md);
+    overflow-x: auto;
+    padding-bottom: var(--spacing-xs);
+}
+
+.tab-btn {
+    flex: 1;
+    min-width: 140px;
+    padding: var(--spacing-md);
+    border: none;
+    background: var(--card-bg);
+    border-radius: var(--radius-md);
+    cursor: pointer;
+    font-family: inherit;
+    font-weight: 700;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: var(--spacing-xs);
+    transition: all var(--transition-fast);
+    box-shadow: var(--shadow-sm);
+}
+
+.tab-btn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.tab-btn.active {
+    background: var(--primary);
+    color: var(--text-light);
+    box-shadow: var(--shadow-md);
+    transform: translateY(-2px);
+}
+
+.tab-icon {
+    font-size: 1.5rem;
+}
+
+.tab-label {
+    font-size: 0.875rem;
+}
+
+/* ========================================
+   Buttons
+   ======================================== */
+.btn {
+    font-family: inherit;
+    font-weight: 800;
+    border: none;
+    cursor: pointer;
+    border-radius: var(--radius-lg);
+    transition: all var(--transition-fast);
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    min-height: var(--btn-min-height);
+    padding: var(--spacing-md) var(--spacing-xl);
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: var(--text-light);
+    font-size: 1.25rem;
+    box-shadow: var(--shadow-btn) var(--btn-shadow-color);
+}
+
+.btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 0 var(--btn-shadow-color);
+}
+
+.btn-primary:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 var(--btn-shadow-color);
+}
+
+.btn-secondary {
+    background: var(--secondary);
+    color: var(--text-light);
+    font-size: 1.25rem;
+    box-shadow: var(--shadow-btn) var(--secondary-dark);
+}
+
+.btn-secondary:hover {
+    transform: translateY(-2px);
+}
+
+.btn-secondary:active {
+    transform: translateY(4px);
+    box-shadow: 0 2px 0 var(--secondary-dark);
+}
+
+.btn-accent {
+    background: var(--accent);
+    color: var(--text-primary);
+    font-size: 1.25rem;
+    box-shadow: var(--shadow-btn) var(--accent-dark);
+}
+
+.btn-large {
+    min-height: 80px;
+    font-size: 1.5rem;
+    padding: var(--spacing-lg) var(--spacing-2xl);
+}
+
+/* Option buttons (range, question count) */
+.btn-option {
+    min-width: 80px;
+    min-height: 80px;
+    font-size: 2rem;
+    background: var(--card-bg);
+    color: var(--text-primary);
+    border: 4px solid transparent;
+    box-shadow: var(--shadow-md);
+}
+
+.btn-option:hover {
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+.btn-option.selected {
+    background: var(--primary);
+    color: var(--text-light);
+    border-color: var(--primary-dark);
+}
+
+/* ========================================
+   Cards
+   ======================================== */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius-lg);
+    padding: var(--spacing-lg);
+    box-shadow: var(--shadow-md);
+}
+
+.card-title {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+    color: var(--primary-dark);
+}
+
+/* ========================================
+   Game Container
+   ======================================== */
+#game-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+/* ========================================
+   Progress Bar
+   ======================================== */
+.progress-bar {
+    height: 16px;
+    background: var(--bg-light);
+    border-radius: var(--radius-md);
+    overflow: hidden;
+    margin-bottom: var(--spacing-md);
+}
+
+.progress-fill {
+    height: 100%;
+    background: linear-gradient(90deg, var(--primary), var(--accent));
+    border-radius: var(--radius-md);
+    transition: width var(--transition-normal);
+}
+
+/* ========================================
+   Emoji Objects (Draggable)
+   ======================================== */
+.emoji-object {
+    font-size: 2.5rem;
+    cursor: grab;
+    user-select: none;
+    transition: transform var(--transition-fast);
+    display: inline-block;
+}
+
+.emoji-object:hover {
+    transform: scale(1.2);
+}
+
+.emoji-object.dragging {
+    cursor: grabbing;
+    transform: scale(1.3);
+    opacity: 0.8;
+}
+
+/* ========================================
+   Drop Zones
+   ======================================== */
+.drop-zone {
+    min-height: 120px;
+    border: 4px dashed var(--primary);
+    border-radius: var(--radius-lg);
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-sm);
+    padding: var(--spacing-md);
+    transition: all var(--transition-fast);
+    background: rgba(255, 255, 255, 0.5);
+}
+
+.drop-zone.drag-over {
+    background: rgba(78, 205, 196, 0.3);
+    border-color: var(--primary-dark);
+    transform: scale(1.02);
+}
+
+.drop-zone-label {
+    width: 100%;
+    text-align: center;
+    color: var(--primary-dark);
+    font-size: 1.25rem;
+    opacity: 0.7;
+}

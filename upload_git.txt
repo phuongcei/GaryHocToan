@@ -1,0 +1,59 @@
+# Git Upload Guide for GaryHocToan
+# ===================================
+# Created: 2026-01-17
+# Repository: https://github.com/phuongcei/GaryHocToan.git
+
+# Step 1: Navigate to project directory
+cd /Users/phuongcei/Downloads/PET_PROJECTS/PET9_GaryHocToan
+
+# Step 2: Initialize git repository (if not already initialized)
+git init
+
+# Step 3: Add all files to staging
+git add .
+
+# Step 4: Commit with descriptive message
+git commit -m "feat: Add Gary Học Toán math learning app for kids
+
+- Number bonds (tách gộp số) game for children 4-5 years old
+- Range selection: 5, 10, or 20
+- Drag-and-drop gameplay with emoji objects
+- 3 colorful themes: Ocean, Forest, Candy
+- Audio feedback using Web Audio API
+- Progress tracking and star ratings"
+
+# Step 5: Add remote origin (GitHub repository)
+git remote add origin https://github.com/phuongcei/GaryHocToan.git
+
+# Step 6: Push to GitHub
+git push -u origin main
+
+# ===================================
+# TROUBLESHOOTING:
+# ===================================
+
+# If branch is 'master' instead of 'main':
+git branch -M main
+git push -u origin main
+
+# If remote already exists:
+git remote set-url origin https://github.com/phuongcei/GaryHocToan.git
+
+# If push is rejected (remote has commits):
+git pull origin main --rebase
+git push -u origin main
+
+# To check status:
+git status
+
+# To view remote:
+git remote -v
+
+# ===================================
+# FUTURE UPDATES:
+# ===================================
+
+# Add changes:
+git add .
+git commit -m "your commit message"
+git push

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="description" content="Gary Học Toán - App học toán vui nhộn cho bé 4-5 tuổi">
+  <title>Gary Học Toán 🧮</title>
+  
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Styles -->
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/animations.css">
+  <link rel="stylesheet" href="css/screens.css">
+  
+  <!-- Favicon -->
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🧮</text></svg>">
+</head>
+<body>
+  <div id="app">
+    <!-- Header -->
+    <header class="app-header">
+      <h1 class="app-title">🧮 Gary Học Toán</h1>
+      <button id="mute-btn" class="mute-btn" aria-label="Tắt/Bật âm thanh">
+        <span class="sound-on">🔊</span>
+        <span class="sound-off" style="display:none">🔇</span>
+      </button>
+    </header>
+
+    <!-- Tab Navigation -->
+    <nav class="tab-navigation">
+      <button class="tab-btn active" data-tab="tach-gop">
+        <span class="tab-icon">✂️</span>
+        <span class="tab-label">Tách Gộp Số</span>
+      </button>
+      <button class="tab-btn" data-tab="coming-soon" disabled>
+        <span class="tab-icon">🔢</span>
+        <span class="tab-label">Sắp ra mắt</span>
+      </button>
+    </nav>
+
+    <!-- Main Game Container -->
+    <main id="game-container">
+      <!-- Screens will be rendered here by JS -->
+    </main>
+  </div>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/game-engine.js"></script>
+  <script src="js/screens.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

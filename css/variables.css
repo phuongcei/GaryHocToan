@@ -1,0 +1,119 @@
+/* ========================================
+   CSS Variables - Color Themes & Design Tokens
+   ======================================== */
+
+:root {
+  /* Theme Selection */
+  --theme: 'ocean';
+  
+  /* Font */
+  --font-family: 'Nunito', 'Segoe UI', sans-serif;
+  
+  /* Spacing */
+  --spacing-xs: 4px;
+  --spacing-sm: 8px;
+  --spacing-md: 16px;
+  --spacing-lg: 24px;
+  --spacing-xl: 32px;
+  --spacing-2xl: 48px;
+  
+  /* Border Radius */
+  --radius-sm: 8px;
+  --radius-md: 16px;
+  --radius-lg: 24px;
+  --radius-xl: 32px;
+  --radius-round: 50%;
+  
+  /* Shadows */
+  --shadow-sm: 0 2px 4px rgba(0,0,0,0.1);
+  --shadow-md: 0 4px 8px rgba(0,0,0,0.15);
+  --shadow-lg: 0 8px 16px rgba(0,0,0,0.2);
+  --shadow-btn: 0 6px 0;
+  
+  /* Transitions */
+  --transition-fast: 0.15s ease;
+  --transition-normal: 0.3s ease;
+  --transition-slow: 0.5s ease;
+  
+  /* Touch targets */
+  --min-touch-size: 48px;
+  --btn-min-height: 64px;
+}
+
+/* ========================================
+   Theme 1: Ocean Adventure 🌊
+   ======================================== */
+[data-theme="ocean"] {
+  --primary: #4ECDC4;
+  --primary-dark: #3BA99C;
+  --secondary: #FF6B6B;
+  --secondary-dark: #E85555;
+  --accent: #FFE66D;
+  --accent-dark: #E6CF5A;
+  
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --bg-light: #E8F4F8;
+  --text-primary: #2D3748;
+  --text-light: #FFFFFF;
+  
+  --btn-shadow-color: #2B9A8F;
+  --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* ========================================
+   Theme 2: Forest Friends 🌲
+   ======================================== */
+[data-theme="forest"] {
+  --primary: #95E08E;
+  --primary-dark: #7BC275;
+  --secondary: #FF9F43;
+  --secondary-dark: #E68A2E;
+  --accent: #F8E71C;
+  --accent-dark: #D4C410;
+  
+  --bg-gradient: linear-gradient(135deg, #11998e 0%, #38ef7d 100%);
+  --bg-light: #E8F8E8;
+  --text-primary: #1A3A1A;
+  --text-light: #FFFFFF;
+  
+  --btn-shadow-color: #68A660;
+  --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* ========================================
+   Theme 3: Candy Land 🍬
+   ======================================== */
+[data-theme="candy"] {
+  --primary: #FF6B9D;
+  --primary-dark: #E65585;
+  --secondary: #C44AFF;
+  --secondary-dark: #A030D9;
+  --accent: #00D9FF;
+  --accent-dark: #00B8D9;
+  
+  --bg-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --bg-light: #FFF0F5;
+  --text-primary: #4A154B;
+  --text-light: #FFFFFF;
+  
+  --btn-shadow-color: #C44A7C;
+  --card-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* Default theme */
+:root {
+  --primary: #4ECDC4;
+  --primary-dark: #3BA99C;
+  --secondary: #FF6B6B;
+  --secondary-dark: #E85555;
+  --accent: #FFE66D;
+  --accent-dark: #E6CF5A;
+  
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --bg-light: #E8F4F8;
+  --text-primary: #2D3748;
+  --text-light: #FFFFFF;
+  
+  --btn-shadow-color: #2B9A8F;
+  --card-bg: rgba(255, 255, 255, 0.95);
+}
